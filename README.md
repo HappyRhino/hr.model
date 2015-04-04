@@ -1,18 +1,45 @@
-Classes for HappyRhino
+Models for HappyRhino
 =============================
 
-[![Build Status](https://travis-ci.org/HappyRhino/hr.class.png?branch=master)](https://travis-ci.org/HappyRhino/hr.class)
+[![Build Status](https://travis-ci.org/HappyRhino/hr.model.png?branch=master)](https://travis-ci.org/HappyRhino/hr.model)
 
 
 ### Documentation
 
-Create a new class by extending the default `Class`:
+##### Creation
+
+Create a new model by extending the default `Model`:
 
 ```js
-var Class = require("hr.class");
+var Model = require("hr.model");
 
-var MyClass = Class.extend({
+var MyModel = Model.extend({
 
 });
+```
 
+##### Default values
+
+Default values are defined in the `defaults` property of the model:
+
+```js
+var Post = Model.extend({
+    defaults: {
+        title: ""
+    }
+});
+```
+
+##### Model Instance
+
+```js
+var post = new Post({}, {
+    title: "My Post"
+});
+```
+
+##### Get
+
+```js
+post.get("title");
 ```
