@@ -71,3 +71,13 @@ post.get("count")
 post.get("count.likes")
 // -> 500
 ```
+
+#### Events
+
+```js
+// Triggered for every set of modifications
+post.on("set", function() { ... });
+
+// Triggered for every change on attributes
+post.on("change:title", function() { ... });
+```
