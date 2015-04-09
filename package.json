@@ -1,7 +1,7 @@
 {
     "name": "hr.model",
     "description": "Data modeling for HappyRgino",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "peerDependencies": {
         "hr.utils": "*",
         "hr.class": "*",
