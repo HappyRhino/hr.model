@@ -81,3 +81,36 @@ post.on("set", function() { ... });
 // Triggered for every change on attributes
 post.on("change:title", function() { ... });
 ```
+
+### Example with React
+
+```js
+var React = require('react');
+var Model = require("hr.model");
+
+var User = Model.extend({
+    defaults: {
+        username: null,
+        permissions: {
+            read: true,
+            write: false
+        }
+    }
+});
+
+var UserItem = React.createClass({
+    componentWillMount : function() {
+        this.props.user.on("change", this.forceUpdate.bind(this));
+    },
+    componentWillUnmount : function() {
+        this.props.user.off("change");
+    },
+    render: function() {
+        return (
+            <div className="user">
+            Username is {{this.props.user.get('username')}}
+            </div>
+        );
+    }
+});
+```
