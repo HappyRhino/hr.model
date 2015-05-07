@@ -1,7 +1,8 @@
 {
     "name": "hr.model",
-    "description": "Data modeling for HappyRgino",
+    "description": "Data modeling for HappyRhino",
     "version": "0.2.0",
+    "main": "./lib/index.js",
     "devDependencies": {
         "hr.mocha": "^0.2.0"
     },
@@ -13,8 +14,8 @@
         "test": "./node_modules/.bin/hr-mocha ./tests/index.js"
     },
     "dependencies": {
-        "hr.utils": "*",
-        "hr.class": "*",
+        "lodash": "*",
+        "hr.class": ">=2.0.0",
         "jsondiffpatch": "0.0.11"
     }
 }
